@@ -21,7 +21,7 @@ func init() {
 	root = C.XDefaultRootWindow(display)
 }
 
-func CaptureScreen(x int, y int, height int, width int) (gocv.Mat, error) {
+func CaptureScreen(x int, y int, width int, height int) (gocv.Mat, error) {
 
 	ximg := C.XGetImage(display, root, C.int(x), C.int(y), C.uint(width), C.uint(height),
 		C.AllPlanes, C.ZPixmap)
